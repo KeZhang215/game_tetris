@@ -68,17 +68,6 @@ python game.py
 
 ---
 
-## 📸 Screenshots (Optional)
-
-> You can add pictures like below after taking screenshots:
-
-```
-![gameplay](images/gameplay.png)
-![win](images/win_screen.png)
-```
-
----
-
 ## 🛠 Code Structure
 
 ```
