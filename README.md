@@ -68,21 +68,11 @@ python game.py
 
 ---
 
-## 🛠 Code Structure
+## 🧩 Improvements
 
-```
-game_tetris/
-│── game.py          # Main game loop and all logic
-│── README.md        # Project documentation
-└── (more files coming soon...)
-```
-
----
-
-## 🧩 Future Improvements (Idea List)
-
-* Ghost piece preview
-* Next block preview
+* Ghost piece preview ✅
+（A new Ghost Piece feature has been added to enhance gameplay visibility. This shows a semi-transparent preview of where the current tetromino will land if dropped straight down.）
+* Next block preview ❌ no need 
 * Background music & sound effects
 * Difficulty scaling (faster drop)
 * Theme customization
