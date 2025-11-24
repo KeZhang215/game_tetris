@@ -128,8 +128,8 @@ class TetrisGame:
 
         if lines_cleared > 0:
             self.score += lines_cleared * 10
-            # 检查是否达到100分通关
-            if self.score >= 100:
+            # 检查是否达到500分通关
+            if self.score >= 500:
                 self.game_win = True
 
     def move(self, dx, dy):
