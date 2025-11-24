@@ -1,6 +1,6 @@
 # 🎮 Tetris Game – Python + Pygame
 
-Simple Tetris: Reach **100 points** to win!
+Simple Tetris: Reach **500 points** to win!
 
 A lightweight and fun Tetris clone built with **Python** and **Pygame**.
 The project focuses on clean logic, smooth controls, and clear game feedback (win, pause, game over).
@@ -14,7 +14,7 @@ Perfect for beginners learning Python game development.
 * ✔️ Smooth block movement & rotation
 * ✔️ Soft drop + hard drop
 * ✔️ Row-clearing with score calculation
-* ✔️ Win condition at **100 points**
+* ✔️ Win condition at **500 points**
 * ✔️ Game Over & Restart system
 * ✔️ Pause / Continue with SPACE
 * ✔️ Random block decorations (“qq”, “kk”) for extra fun
@@ -62,7 +62,7 @@ python game.py
 ## 🧱 Game Rules
 
 * Each cleared row = **10 points**
-* Reach **100 points** → 🎉 **YOU WIN**
+* Reach **500 points** → 🎉 **YOU WIN**
 * Block touching the top → ❌ **GAME OVER**
 * Use **R** to restart at any time after win/lose
 
