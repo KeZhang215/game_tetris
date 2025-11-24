@@ -152,6 +152,18 @@ class TetrisGame:
         while self.move(0, 1):
             pass
 
+    def get_drop_position(self):
+        """计算方块的落点位置"""
+        if not self.current_piece:
+            return None
+
+        drop_y = self.current_piece.y
+        # 模拟下落，直到碰撞
+        while not self.check_collision(self.current_piece, 0, drop_y - self.current_piece.y + 1):
+            drop_y += 1
+
+        return drop_y
+
     def draw_grid(self):
         """绘制网格"""
         for y in range(GRID_HEIGHT):
@@ -172,6 +184,23 @@ class TetrisGame:
                 else:
                     pygame.draw.rect(self.screen, GRAY,
                                    (block_x, block_y, BLOCK_SIZE - 1, BLOCK_SIZE - 1), 1)
+
+    def draw_ghost_piece(self):
+        """绘制落点预览（半透明方块）"""
+        if self.current_piece:
+            drop_y = self.get_drop_position()
+            if drop_y is not None and drop_y != self.current_piece.y:
+                # 创建半透明表面
+                ghost_surface = pygame.Surface((BLOCK_SIZE - 1, BLOCK_SIZE - 1))
+                ghost_surface.set_alpha(80)  # 设置透明度（0-255）
+                ghost_surface.fill(self.current_piece.color)
+
+                for y, row in enumerate(self.current_piece.shape):
+                    for x, cell in enumerate(row):
+                        if cell:
+                            block_x = (self.current_piece.x + x) * BLOCK_SIZE
+                            block_y = (drop_y + y) * BLOCK_SIZE
+                            self.screen.blit(ghost_surface, (block_x, block_y))
 
     def draw_piece(self):
         """绘制当前方块"""
@@ -304,7 +333,8 @@ class TetrisGame:
             # 绘制
             self.screen.fill(BLACK)
             self.draw_grid()
-            self.draw_piece()
+            self.draw_ghost_piece()  # 先绘制半透明的落点预览
+            self.draw_piece()  # 再绘制当前方块
             self.draw_score()
 
             if self.game_over:
